@@ -1,6 +1,8 @@
 namespace SpriteKind {
     export const Jugador_Inmune = SpriteKind.create()
     export const Player_Inmune = SpriteKind.create()
+    export const Meta1 = SpriteKind.create()
+    export const Moneda = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -100,6 +102,18 @@ f f 9 9 9 9 f 6 6 6 6 f 8 8 . .
 . . . f f f f f f f . . . . . . 
 `, SpriteKind.Enemy)
     Enemigo4.setPosition(2312, 88)
+}
+function Mis_Monedas () {
+    Moneda1 = sprites.create(img`
+. . . b b . . . 
+. . b 5 5 b . . 
+. b 5 d 1 5 b . 
+. b 5 3 1 5 b . 
+. c 5 3 1 d c . 
+. c 5 1 d d c . 
+. . f d d f . . 
+. . . f f . . . 
+`, SpriteKind.Moneda)
 }
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
@@ -202,6 +216,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 let Jugador: Sprite = null
 let projectile: Sprite = null
+let Moneda1: Sprite = null
 let Enemigo4: Sprite = null
 let Enemigo3: Sprite = null
 let Enemigo2: Sprite = null
@@ -355,3 +370,8 @@ tiles.setTilemap(tiles.createTilemap(
         ))
 Mi_Jugador()
 Mis_Enemigos()
+Mis_Monedas()
+let Meta1 = sprites.create(img`
+7 
+`, SpriteKind.Meta1)
+Meta1.setPosition(2872, 232)
