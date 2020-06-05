@@ -23,31 +23,6 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `
 }
-function Mi_Jugador () {
-    Jugador = sprites.create(img`
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 1 1 1 1 1 2 2 1 1 1 1 1 2 2 
-2 2 1 1 1 1 1 2 2 1 1 1 1 1 2 2 
-2 2 1 1 f f f 2 2 1 1 f f f 2 2 
-2 2 1 1 f f f 2 2 1 1 f f f 2 2 
-2 2 1 1 f f f 2 2 1 1 f f f 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 4 4 4 4 4 2 2 2 2 2 
-2 2 2 2 2 2 4 4 4 4 4 2 2 2 2 2 
-2 2 2 2 2 2 4 4 4 4 4 2 2 2 2 2 
-2 2 2 2 2 2 4 4 4 4 4 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-`, SpriteKind.Player)
-    Jugador.setPosition(32, 232)
-    scene.cameraFollowSprite(Jugador)
-    controller.moveSprite(Jugador, 100, 0)
-    // Aceleracion vertical
-    Jugador.ay = 500
-}
 function Mis_Enemigos () {
     Enemigo1 = sprites.create(img`
 . . f f f . . . . . . . . f f f 
@@ -166,6 +141,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . . . . . . . . . . 
 `, Jugador, 150, 0)
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava0, function (sprite, location) {
+    music.pewPew.play()
+    pause(500)
+    Jugador.setPosition(32, 232)
+    info.changeLifeBy(-1)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.startEffect(effects.disintegrate)
     pause(500)
@@ -190,16 +171,41 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `)
 })
+function Mi_Jugador () {
+    Jugador = sprites.create(img`
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 1 1 1 1 1 2 2 1 1 1 1 1 2 2 
+2 2 1 1 1 1 1 2 2 1 1 1 1 1 2 2 
+2 2 1 1 f f f 2 2 1 1 f f f 2 2 
+2 2 1 1 f f f 2 2 1 1 f f f 2 2 
+2 2 1 1 f f f 2 2 1 1 f f f 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 4 4 4 4 4 2 2 2 2 2 
+2 2 2 2 2 2 4 4 4 4 4 2 2 2 2 2 
+2 2 2 2 2 2 4 4 4 4 4 2 2 2 2 2 
+2 2 2 2 2 2 4 4 4 4 4 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+`, SpriteKind.Player)
+    Jugador.setPosition(32, 232)
+    scene.cameraFollowSprite(Jugador)
+    controller.moveSprite(Jugador, 100, 0)
+    // Aceleracion vertical
+    Jugador.ay = 500
+}
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     // velocidad negativa para que se mueva hacia arriba
     Jugador.vy = -230
 })
+let Jugador: Sprite = null
 let projectile: Sprite = null
 let Enemigo4: Sprite = null
 let Enemigo3: Sprite = null
 let Enemigo2: Sprite = null
 let Enemigo1: Sprite = null
-let Jugador: Sprite = null
 info.setLife(3)
 info.setScore(0)
 scene.setBackgroundImage(img`
