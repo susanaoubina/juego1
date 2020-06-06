@@ -663,3 +663,10 @@ Meta1 = sprites.create(img`
 . . . f . . . . . . . . . . . . 
 `, SpriteKind.Meta1)
 Meta1.setPosition(2884, 232)
+forever(function () {
+    if (info.score() < 30) {
+        music.playMelody("A F E F D G E F ", 120)
+    } else {
+    	
+    }
+})
