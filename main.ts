@@ -30,6 +30,27 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `
 }
+function Mis_Carteles2 () {
+    Cartel3 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e f f f e f e f e f f f e e e 
+e e e e e e e e e e e e e e e e 
+e e f e f e f e f f f e f e e e 
+e e e e e e e e e e e e e e e e 
+e e f e f f f e f e f f f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+`, SpriteKind.Cartel3)
+    Cartel1.setPosition(160, 232)
+}
 function Mis_Enemigos () {
     Enemigo1 = sprites.create(img`
 . . f f f . . . . . . . . f f f 
@@ -107,67 +128,6 @@ f f 9 9 9 9 f 6 6 6 6 f 8 8 . .
 . . . f f f f f f f . . . . . . 
 `, SpriteKind.Enemy)
     Enemigo4.setPosition(2312, 88)
-}
-function Mis_Carteles1 () {
-    Cartel1 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e f f f e f e f e f f f e e e 
-e e e e e e e e e e e e e e e e 
-e e f e f e f e f f f e f e e e 
-e e e e e e e e e e e e e e e e 
-e e f e f f f e f e f f f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-`, SpriteKind.Cartel1)
-    Cartel1.setPosition(160, 232)
-    Cartel2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e f f f e f e f e f f f e e e 
-e e e e e e e e e e e e e e e e 
-e e f e f e f e f f f e f e e e 
-e e e e e e e e e e e e e e e e 
-e e f e f f f e f e f f f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-`, SpriteKind.Cartel2)
-    Cartel2.setPosition(928, 232)
-}
-function Mis_Carteles2 () {
-    Cartel3 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e f f f e f e f e f f f e e e 
-e e e e e e e e e e e e e e e e 
-e e f e f e f e f f f e f e e e 
-e e e e e e e e e e e e e e e e 
-e e f e f f f e f e f f f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . e e . . . . . . . 
-`, SpriteKind.Cartel3)
-    Cartel1.setPosition(160, 232)
 }
 function Mis_Monedas2 () {
     Moneda1 = sprites.create(img`
@@ -247,6 +207,46 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda, function (sprite, otherS
     music.baDing.play()
     info.changeScoreBy(1)
 })
+function Mis_Carteles1 () {
+    Cartel1 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e f f f e f e f e f f f e e e 
+e e e e e e e e e e e e e e e e 
+e e f e f e f e f f f e f e e e 
+e e e e e e e e e e e e e e e e 
+e e f e f f f e f e f f f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+`, SpriteKind.Cartel1)
+    Cartel1.setPosition(160, 232)
+    Cartel2 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e f f f e f e f e f f f e e e 
+e e e e e e e e e e e e e e e e 
+e e f e f e f e f f f e f e e e 
+e e e e e e e e e e e e e e e e 
+e e f e f f f e f e f f f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . e e . . . . . . . 
+`, SpriteKind.Cartel2)
+    Cartel2.setPosition(928, 232)
+}
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
     otherSprite.destroy(effects.fire, 500)
@@ -810,18 +810,18 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 let Jugador: Sprite = null
 let projectile: Sprite = null
+let Cartel2: Sprite = null
 let Moneda5: Sprite = null
 let Moneda4: Sprite = null
 let Moneda3: Sprite = null
 let Moneda2: Sprite = null
 let Moneda1: Sprite = null
-let Cartel3: Sprite = null
-let Cartel2: Sprite = null
-let Cartel1: Sprite = null
 let Enemigo4: Sprite = null
 let Enemigo3: Sprite = null
 let Enemigo2: Sprite = null
 let Enemigo1: Sprite = null
+let Cartel1: Sprite = null
+let Cartel3: Sprite = null
 let Meta1: Sprite = null
 info.setLife(3)
 info.setScore(0)
@@ -994,5 +994,5 @@ Meta1 = sprites.create(img`
 `, SpriteKind.Meta1)
 Meta1.setPosition(2884, 232)
 game.showLongText("Utiliza los cursores para moverte y el botón A para disparar a los enemigos", DialogLayout.Bottom)
-music.setVolume(20)
+music.setVolume(75)
 music.playMelody("A F E F D G E F ", 120)
