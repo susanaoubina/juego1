@@ -245,7 +245,7 @@ e e e e e e e e e e e e e e e e
 . . . . . . . e e . . . . . . . 
 . . . . . . . e e . . . . . . . 
 `, SpriteKind.Cartel2)
-    Cartel2.setPosition(928, 232)
+    Cartel2.setPosition(800, 232)
 }
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
@@ -705,7 +705,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Meta1, function (sprite, otherSp
 . . . f . . . . . . . . . . . . 
 . . . f . . . . . . . . . . . . 
 `, SpriteKind.Meta2)
-    Meta1.setPosition(1616, 232)
+    Meta1.setPosition(1626, 232)
     music.playMelody("E B C5 A B G A F ", 120)
 })
 function Mis_Enemigos2 () {
@@ -992,7 +992,7 @@ Meta1 = sprites.create(img`
 . . . f . . . . . . . . . . . . 
 . . . f . . . . . . . . . . . . 
 `, SpriteKind.Meta1)
-Meta1.setPosition(2884, 232)
+Meta1.setPosition(2864, 232)
 game.showLongText("Utiliza los cursores para moverte y el botón A para disparar a los enemigos", DialogLayout.Bottom)
 music.setVolume(75)
 music.playMelody("A F E F D G E F ", 120)
